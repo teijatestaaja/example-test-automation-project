@@ -1,6 +1,12 @@
 # Example Test Automation Project
 
-This is a small sample project for introducing web test automation, using Python, Robot Framework and QWeb library.
+This is a small sample project for introducing web test automation, using Python, Robot Framework and QWeb library. The project is an example of
+
+- good test automation project structure
+- division of test code into test suites and resource files
+- usage of existing keyword library (QWeb)
+- own keyword creation
+- keyword documentation created with Libtoc
 
 # Project Structure
 
@@ -21,7 +27,7 @@ The test app is a simple [TodoMVC application](https://todomvc.com/examples/kotl
 - [QWeb library](https://github.com/qentinelqi/qweb)
 - [ChromeDriver](https://chromedriver.chromium.org/)
 - [Robocop](https://robocop.readthedocs.io/en/stable/) - for static code analysis
-- [Libtoc](https://github.com/amochin/robotframework-libtoc) - for documentation
+- [Libtoc](https://github.com/amochin/robotframework-libtoc) - for keyword documentation
 
 # How to run tests?
 
