@@ -19,5 +19,20 @@ The test app is a simple [TodoMVC application](https://todomvc.com/examples/kotl
 - [Python](https://www.python.org/)
 - [Robot Framework](https://robotframework.org/)
 - [QWeb library](https://github.com/qentinelqi/qweb)
-- [Robocop](https://robocop.readthedocs.io/en/stable/)
-- [Libtoc](https://github.com/amochin/robotframework-libtoc)
+- [ChromeDriver](https://chromedriver.chromium.org/)
+- [Robocop](https://robocop.readthedocs.io/en/stable/) - for static code analysis
+- [Libtoc](https://github.com/amochin/robotframework-libtoc) - for documentation
+
+# How to run tests?
+
+Run tests headless, from root folder: 
+
+```
+robot -v browser_options:"-headless" tests/test_todo_app.robot
+```
+
+Run tests with Chrome, from root folder:
+
+```
+robot tests/test_todo_app.robot
+```
