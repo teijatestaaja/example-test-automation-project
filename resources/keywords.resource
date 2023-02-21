@@ -15,7 +15,7 @@ Add And Verify Todo Item
 Mark Todo Item On Row
     [Documentation]    Marks todo item on a given row. If the item was already marked, unmarks it.
     [Arguments]    ${row}
-    ${row}=    Evaluate  ${row}
+    ${row}=    Evaluate    ${row}
     ${items}=    Get Element Count    //li/div/label
     IF    ${row} > ${items}    Fail    Please give correct row number!
     Click Element    //li[${row}]/div/input
