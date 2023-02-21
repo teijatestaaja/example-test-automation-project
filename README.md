@@ -29,7 +29,7 @@ The test app is a simple [TodoMVC application](https://todomvc.com/examples/kotl
 - [Robocop](https://robocop.readthedocs.io/en/stable/) - for static code analysis
 - [Libtoc](https://github.com/amochin/robotframework-libtoc) - for keyword documentation
 
-# How to run tests and create documentation for keywords used in the project?
+# How to run tests and create documentation for keywords?
 
 Run tests headless, from root folder: 
 
@@ -43,7 +43,7 @@ Run tests with Chrome, from root folder:
 robot tests/test_todo_app.robot
 ```
 
-Create documentation for own keywords as well as QWeb keywords:
+Create documentation for own keywords:
 
 ```
 libtoc --output_dir docs resources
