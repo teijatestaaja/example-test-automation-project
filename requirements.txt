@@ -1,0 +1,5 @@
+robotframework>=7
+robotframework-robocop>=5.8.0
+chromedriver-py==131.*
+QWeb>=3.4.3
+robotframework-libtoc==1.4.2
