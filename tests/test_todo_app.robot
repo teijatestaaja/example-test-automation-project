@@ -3,7 +3,7 @@ Documentation     Example tests for Todo App.
 Library           QWeb
 Resource          ../resources/variables.resource
 Resource          ../resources/keywords.resource
-Test Tags         smoke
+Test Tags         todo_app
 Suite Setup       Setup Browser
 Test Setup        Open Browser    ${LINK_TO_SUT}    ${BROWSER}
 Test Teardown     Close Browser
@@ -13,7 +13,7 @@ Suite Teardown    Close All Browsers
 *** Test Cases ***
 Page Title And Placeholder Should Be Shown
     [Documentation]    Tests that page title and placeholder for todo input field are shown.
-    [Tags]    title
+    [Tags]    smoke
     Verify Element Text    //h1    todos
     Verify Attribute    ${TODO_INPUT}    placeholder    What needs to be done?
     Verify No Text    All

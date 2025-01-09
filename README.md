@@ -2,11 +2,12 @@
 
 This is a small sample project for introducing web test automation using Python, Robot Framework and QWeb library. The project is an example of
 
-- good test automation project structure
+- good test automation project folder structure
 - division of test code into test suites and resource files
 - usage of existing keyword library (QWeb)
 - creation of own keywords in a resource file
-- keyword documentation created with Libtoc
+- keyword documentation creation (Libtoc)
+- example usage of bash script as a pre-commit hook to lint robot code with Robocop and run robot smoke tests before code commit.
 
 # Project Structure
 
@@ -14,6 +15,7 @@ This is a small sample project for introducing web test automation using Python,
 tests       - robot test files
 resources   - resource files
 docs        - documentation
+scripts     - example scripts for git hooks
 ```
 
 # Tools
@@ -35,12 +37,16 @@ The test app is a simple [TodoMVC application](https://todomvc.com/examples/reac
 - Feature 4: User can clear completed todo items.
 - Feature 5: User can destroy todo items.
 
+# Hooks
+
+To use hooks, copy all hook files from _scripts/hooks_to_copy_ folder to your local repo's _.git/hooks_ folder.
+
 # How to run tests and create documentation for keywords
 
 Run tests headless, from root folder: 
 
 ```
-robot -v browser_options:"-headless" tests/test_todo_app.robot
+robot -v browser_options:-headless tests/test_todo_app.robot
 ```
 
 Run tests with Chrome, from root folder:

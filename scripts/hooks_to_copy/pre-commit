@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+echo "Running pre-commit hook: Robocop linter and Robot tests"
+
+robocop --reports all .
+
+# $? stores exit value of the last command
+if [ $? -ne 0 ]; then
+ echo "Robot code linting must pass before commit!"
+ exit 1
+fi
+
+robot -i smoke tests/test_todo_app.robot
+
+# $? stores exit value of the last command
+if [ $? -ne 0 ]; then
+ echo "Robot smoke tests must pass before commit!"
+ exit 1
+fi
