@@ -20,12 +20,13 @@ scripts     - example scripts for git hooks
 
 # Tools
 
-- [Python](https://www.python.org/)
-- [Robot Framework](https://robotframework.org/)
-- [QWeb library](https://github.com/qentinelqi/qweb)
-- [ChromeDriver](https://chromedriver.chromium.org/)
+- [Python](https://www.python.org/) - for anything :)
+- [Robot Framework](https://robotframework.org/) - for running tests
+- [QWeb library](https://github.com/qentinelqi/qweb) - for running tests
+- [ChromeDriver](https://chromedriver.chromium.org/) - for running tests
 - [Robocop](https://robocop.readthedocs.io/en/stable/) - for static code analysis
 - [Libtoc](https://github.com/amochin/robotframework-libtoc) - for keyword documentation
+- [Githooks](https://www.atlassian.com/git/tutorials/git-hooks) - for triggering customizable actions on this Git repository
 
 # System Under Test
 
