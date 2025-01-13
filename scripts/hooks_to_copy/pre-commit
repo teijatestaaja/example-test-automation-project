@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Running pre-commit hook: Robocop linter and Robot tests"
 
-robocop --reports all .
+robocop -A ./resources/.robocop -rules ./resources/my_rules.py
 
 # $? stores exit value of the last command
 if [ $? -ne 0 ]; then
