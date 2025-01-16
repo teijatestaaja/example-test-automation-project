@@ -2,11 +2,12 @@
 
 This is a small sample project for introducing web test automation using Python, Robot Framework and QWeb library. The project is an example of
 
-- good test automation project folder structure
+- good test automation project folder structure, using GitHub
+- usage of gitignore file to ignore certain generated files and directories which are unnecessary to this project
 - division of test code into test suites and resource files
-- usage of existing keyword library (QWeb)
-- creation of own keywords in a resource file
-- creation of keyword documentation (Libtoc)
+- usage of existing keyword library (QWeb) in test automation
+- creation of own keywords in a resource file, using existing keywords
+- creation of keyword documentation using Libtoc
 - exclusion of existing Robocop linter rule "todo-in-comment" in .robocop argument file
 - customization of own INFO type linter rule for Robocop
 - usage of bash script as a pre-commit hook to lint robot code with Robocop and run robot smoke tests before code commit.
