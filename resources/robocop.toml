@@ -1,0 +1,6 @@
+[tool.robocop]
+
+[tool.robocop.lint]
+ignore = [
+    "todo-in-comment"
+]

@@ -48,7 +48,7 @@ The test app is a simple [TodoMVC application](https://todomvc.com/examples/reac
 
 To use hooks, copy all hook files from _scripts/hooks_to_copy_ folder to your local repo's _.git/hooks_ folder.
 
-# How to run tests and create documentation for keywords
+# How to run tests
 
 Run tests headless, from root folder: 
 
@@ -62,11 +62,15 @@ Run tests from root folder with default browser Chrome:
 robot tests/test_todo_app.robot
 ```
 
-Run linter using both an argument file and a set of own rules, on root folder:
+Run Robocop linter using either config file or a set of own rules, on root folder:
 
 ```
-robocop -A ./resources/.robocop -rules ./resources/my_rules.py
+robocop check
+robocop check --config resources\robocop.toml
+robocop check --custom-rules .\resources\my_rules.py
 ```
+
+# How to create documentation
 
 Create documentation for own keywords:
 

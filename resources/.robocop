@@ -1,5 +1,0 @@
- # Exclude existing Robocop linter rule 0701 "todo-in-comment".
---exclude 0701
-
-# Generate reports after scan.
---reports all
