@@ -21,7 +21,7 @@ docs        - keyword documentation
 resources   - resource files, robocop config file, own linter rules
 scripts     - example scripts for git hooks and test report generation
 tests       - robot test files
-test_runs   - test runs that can be added to the db stored locally
+test_runs   - timestamped output.xml files that can be added to the db stored locally
 ```
 
 # Tools
