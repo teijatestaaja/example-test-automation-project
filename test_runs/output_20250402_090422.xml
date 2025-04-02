@@ -1,0 +1,1626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.10.1 on win32)" generated="2025-04-02T08:53:36.477868" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Todo App" source="C:\Users\teija\projektit\example-test-automation-project\tests\test_todo_app.robot">
+<kw name="Setup Browser" owner="keywords" type="SETUP">
+<kw name="Set Config" owner="QWeb">
+<arg>LineBreak</arg>
+<arg>\ue007</arg>
+<tag>Config</tag>
+<doc>Set configuration parameter to given value. Return previous value.</doc>
+<status status="PASS" start="2025-04-02T08:53:39.143388" elapsed="0.000000"/>
+</kw>
+<doc>Sets QWeb to press enter after inputting text to a text field, and opens a browser.</doc>
+<status status="PASS" start="2025-04-02T08:53:39.143388" elapsed="0.000000"/>
+</kw>
+<test id="s1-t1" name="Page Title And Placeholder Should Be Shown" line="14">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:53:39.154222" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:53:42.915479" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:53:42.915479" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:53:42.915479" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:53:39.143388" elapsed="4.790715"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>${TITLE_ELEMENT}</arg>
+<arg>todos</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:43.936614" elapsed="0.236106"/>
+</kw>
+<kw name="Verify Attribute" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>placeholder</arg>
+<arg>What needs to be done?</arg>
+<tag>Verification</tag>
+<doc>Verify attribute value of an element.</doc>
+<status status="PASS" start="2025-04-02T08:53:44.172720" elapsed="0.242753"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>All</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:53:44.418844" elapsed="0.307520"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Active</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:53:44.726364" elapsed="0.289761"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Completed</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:53:45.016125" elapsed="0.277662"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:53:45.295796" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:53:45.293787" elapsed="2.235810"/>
+</kw>
+<doc>FEATURE 1: Tests that page title and placeholder for todo input field are shown.</doc>
+<tag>smoke</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:53:39.143388" elapsed="8.386512"/>
+</test>
+<test id="s1-t2" name="Add New Todo Item" line="23">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:53:47.535837" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:53:50.031309" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:53:50.031309" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:53:50.031309" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:53:47.531819" elapsed="3.024546"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:50.556365" elapsed="0.584870"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:51.220096" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:51.141235" elapsed="0.078861"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:51.223773" elapsed="0.154956"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:50.556365" elapsed="0.822364"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>1 item left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:53:51.378729" elapsed="0.244381"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:53:51.623110" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:53:51.623110" elapsed="2.227697"/>
+</kw>
+<doc>FEATURE 1: Tests that a new todo item can be added.</doc>
+<tag>add</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:53:47.529900" elapsed="6.320907"/>
+</test>
+<test id="s1-t3" name="Add Multiple Todo Items" line="29">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:53:53.858771" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:53:56.184730" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:53:56.184730" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:53:56.184730" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:53:53.850807" elapsed="2.789147"/>
+</kw>
+<variable name="@{items}">
+<var>Test</var>
+<var>Automation</var>
+<var>Is</var>
+<var>Fun</var>
+<var>And</var>
+<var>Useful</var>
+<var>Because</var>
+<var>It</var>
+<var>Saves</var>
+<var>Time</var>
+<status status="PASS" start="2025-04-02T08:53:56.639954" elapsed="0.000000"/>
+</variable>
+<for flavor="IN">
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:56.644174" elapsed="0.437924"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:57.147240" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.082098" elapsed="0.065142"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.150653" elapsed="0.145368"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:56.642981" elapsed="0.653040"/>
+</kw>
+<var name="${item}">Test</var>
+<status status="PASS" start="2025-04-02T08:53:56.642981" elapsed="0.653040"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.299181" elapsed="0.217874"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:57.571010" level="INFO">${items} = 2</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.518427" elapsed="0.052583"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.571010" elapsed="0.095772"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.299181" elapsed="0.367601"/>
+</kw>
+<var name="${item}">Automation</var>
+<status status="PASS" start="2025-04-02T08:53:57.299181" elapsed="0.367601"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.669072" elapsed="0.175626"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:57.968485" level="INFO">${items} = 3</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.847777" elapsed="0.120708"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.968485" elapsed="0.193915"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:57.669072" elapsed="0.493328"/>
+</kw>
+<var name="${item}">Is</var>
+<status status="PASS" start="2025-04-02T08:53:57.666782" elapsed="0.495618"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.168289" elapsed="0.226054"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:58.460363" level="INFO">${items} = 4</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.395297" elapsed="0.065066"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.462980" elapsed="0.136963"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.162400" elapsed="0.437543"/>
+</kw>
+<var name="${item}">Fun</var>
+<status status="PASS" start="2025-04-02T08:53:58.162400" elapsed="0.437543"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.599943" elapsed="0.213046"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:58.882359" level="INFO">${items} = 5</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.812989" elapsed="0.069370"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.882359" elapsed="0.138071"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:58.599943" elapsed="0.420487"/>
+</kw>
+<var name="${item}">And</var>
+<status status="PASS" start="2025-04-02T08:53:58.599943" elapsed="0.420487"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.022374" elapsed="0.212894"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:59.310436" level="INFO">${items} = 6</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.235268" elapsed="0.075168"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.312457" elapsed="0.150441"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.021866" elapsed="0.441032"/>
+</kw>
+<var name="${item}">Useful</var>
+<status status="PASS" start="2025-04-02T08:53:59.021866" elapsed="0.441032"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.464998" elapsed="0.230316"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:53:59.768512" level="INFO">${items} = 7</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.695783" elapsed="0.072729"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.768512" elapsed="0.161970"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.462898" elapsed="0.467584"/>
+</kw>
+<var name="${item}">Because</var>
+<status status="PASS" start="2025-04-02T08:53:59.462898" elapsed="0.467584"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.930482" elapsed="0.239233"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:00.250588" level="INFO">${items} = 8</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.169715" elapsed="0.080873"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.250588" elapsed="0.142531"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:53:59.930482" elapsed="0.462637"/>
+</kw>
+<var name="${item}">It</var>
+<status status="PASS" start="2025-04-02T08:53:59.930482" elapsed="0.462637"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.393853" elapsed="0.238955"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:00.711437" level="INFO">${items} = 9</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.632808" elapsed="0.078629"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.711437" elapsed="0.173633"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.393853" elapsed="0.491217"/>
+</kw>
+<var name="${item}">Saves</var>
+<status status="PASS" start="2025-04-02T08:54:00.393853" elapsed="0.491217"/>
+</iter>
+<iter>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.886861" elapsed="0.219191"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:01.173547" level="INFO">${items} = 10</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:01.106052" elapsed="0.067495"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:01.173547" elapsed="0.086639"/>
+</kw>
+<arg>${item}</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:00.886351" elapsed="0.373835"/>
+</kw>
+<var name="${item}">Time</var>
+<status status="PASS" start="2025-04-02T08:54:00.885070" elapsed="0.383439"/>
+</iter>
+<var>${item}</var>
+<value>@{items}</value>
+<status status="PASS" start="2025-04-02T08:53:56.639954" elapsed="4.628555"/>
+</for>
+<kw name="Verify Text" owner="QWeb">
+<arg>10 items left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:01.268509" elapsed="0.110620"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:01.379129" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:01.379129" elapsed="2.231082"/>
+</kw>
+<doc>FEATURE 1: Tests that 10 todo items can be added.</doc>
+<tag>add_many</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:53:53.850807" elapsed="9.759404"/>
+</test>
+<test id="s1-t4" name="Mark Todo Item" line="38">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:03.618008" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:05.929266" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:05.929266" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:05.929266" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:03.612227" elapsed="2.743936"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:06.358961" elapsed="0.461820"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:06.894778" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:06.820781" elapsed="0.073997"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:06.894778" elapsed="0.190493"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:06.357683" elapsed="0.730142"/>
+</kw>
+<kw name="Mark Todo Item On Row" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-02T08:54:07.087825" level="INFO">${row} = 1</msg>
+<var>${row}</var>
+<arg>${row}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-02T08:54:07.087825" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:07.143383" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:07.087825" elapsed="0.055558"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} &gt; ${items}">
+<kw name="Fail" owner="BuiltIn">
+<arg>Please give correct row number!</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-04-02T08:54:07.145392" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-04-02T08:54:07.143383" elapsed="0.002009"/>
+</branch>
+<status status="PASS" start="2025-04-02T08:54:07.143383" elapsed="0.002009"/>
+</if>
+<kw name="Click Element" owner="QWeb">
+<arg>//li[${row}]/div/input</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:54:07.145392" elapsed="0.188970"/>
+</kw>
+<arg>1</arg>
+<doc>Marks todo item on a given row. If the item was already marked, unmarks it.</doc>
+<status status="PASS" start="2025-04-02T08:54:07.087825" elapsed="0.248242"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>0 items left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:07.336581" elapsed="0.184962"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:07.523853" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:07.522558" elapsed="2.194384"/>
+</kw>
+<doc>FEATURE 2: Tests that a todo item can be marked as completed.</doc>
+<tag>mark</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:54:03.612227" elapsed="6.106000"/>
+</test>
+<test id="s1-t5" name="Unmark Todo Item" line="45">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:09.724727" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:11.812702" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:11.812702" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:11.812702" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:09.720917" elapsed="2.511247"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.235123" elapsed="0.452839"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:12.771965" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.687962" elapsed="0.084003"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.771965" elapsed="0.159096"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.232164" elapsed="0.698897"/>
+</kw>
+<kw name="Mark Todo Item On Row" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-02T08:54:12.933287" level="INFO">${row} = 1</msg>
+<var>${row}</var>
+<arg>${row}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.933287" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:12.992828" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.933287" elapsed="0.059541"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} &gt; ${items}">
+<kw name="Fail" owner="BuiltIn">
+<arg>Please give correct row number!</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-04-02T08:54:12.992828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-04-02T08:54:12.992828" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-04-02T08:54:12.992828" elapsed="0.000000"/>
+</if>
+<kw name="Click Element" owner="QWeb">
+<arg>//li[${row}]/div/input</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.992828" elapsed="0.187889"/>
+</kw>
+<arg>1</arg>
+<doc>Marks todo item on a given row. If the item was already marked, unmarks it.</doc>
+<status status="PASS" start="2025-04-02T08:54:12.933287" elapsed="0.247430"/>
+</kw>
+<kw name="Mark Todo Item On Row" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-02T08:54:13.180717" level="INFO">${row} = 1</msg>
+<var>${row}</var>
+<arg>${row}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-02T08:54:13.180717" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:13.241199" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:13.186242" elapsed="0.054957"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} &gt; ${items}">
+<kw name="Fail" owner="BuiltIn">
+<arg>Please give correct row number!</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-04-02T08:54:13.243167" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-04-02T08:54:13.243167" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-04-02T08:54:13.243167" elapsed="0.000000"/>
+</if>
+<kw name="Click Element" owner="QWeb">
+<arg>//li[${row}]/div/input</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:54:13.243167" elapsed="0.189240"/>
+</kw>
+<arg>1</arg>
+<doc>Marks todo item on a given row. If the item was already marked, unmarks it.</doc>
+<status status="PASS" start="2025-04-02T08:54:13.180717" elapsed="0.256010"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>1 item left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:13.436727" elapsed="0.184425"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:13.622173" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:13.622173" elapsed="2.211073"/>
+</kw>
+<doc>FEATURE 2: Tests that a marked todo item can be unmarked.</doc>
+<tag>todo_app</tag>
+<tag>unmark</tag>
+<status status="PASS" start="2025-04-02T08:54:09.718227" elapsed="6.115019"/>
+</test>
+<test id="s1-t6" name="Mark All Todo Items At Once" line="53">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:15.842270" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:18.124678" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:18.124678" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:18.125818" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:15.833246" elapsed="2.733168"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:18.568426" elapsed="0.413267"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:19.044961" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:18.981693" elapsed="0.063268"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.044961" elapsed="0.130487"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:18.568426" elapsed="0.607022"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.175448" elapsed="0.205625"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:19.447500" level="INFO">${items} = 2</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.381073" elapsed="0.066427"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.447500" elapsed="0.141644"/>
+</kw>
+<arg>Run robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.175448" elapsed="0.413696"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.592362" elapsed="0.245766"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:19.903002" level="INFO">${items} = 3</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.838635" elapsed="0.064367"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.903002" elapsed="0.144196"/>
+</kw>
+<arg>Analyse test run results</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:19.590346" elapsed="0.456852"/>
+</kw>
+<kw name="Click Element" owner="QWeb">
+<arg>${TOGGLE_ALL}</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:54:20.047198" elapsed="0.223410"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>0 items left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:20.270608" elapsed="0.213115"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:20.490087" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:20.488429" elapsed="2.224813"/>
+</kw>
+<doc>FEATURE 2: Tests that all todo items can be marked as complete at once.</doc>
+<tag>mark_all</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:54:15.833246" elapsed="6.879996"/>
+</test>
+<test id="s1-t7" name="View Completed Todo Items" line="62">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:22.721902" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:25.072265" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:25.072265" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:25.072265" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:22.713242" elapsed="2.792684"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:25.507971" elapsed="0.461034"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:26.044332" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:25.969005" elapsed="0.075327"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.044332" elapsed="0.178738"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:25.505926" elapsed="0.717144"/>
+</kw>
+<kw name="Mark Todo Item On Row" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-02T08:54:26.223070" level="INFO">${row} = 1</msg>
+<var>${row}</var>
+<arg>${row}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.223070" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:26.293337" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.223070" elapsed="0.070267"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} &gt; ${items}">
+<kw name="Fail" owner="BuiltIn">
+<arg>Please give correct row number!</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-04-02T08:54:26.293337" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-04-02T08:54:26.293337" elapsed="0.000000"/>
+</branch>
+<status status="PASS" start="2025-04-02T08:54:26.293337" elapsed="0.000000"/>
+</if>
+<kw name="Click Element" owner="QWeb">
+<arg>//li[${row}]/div/input</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.293337" elapsed="0.261250"/>
+</kw>
+<arg>1</arg>
+<doc>Marks todo item on a given row. If the item was already marked, unmarks it.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.223070" elapsed="0.331517"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Active</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.557131" elapsed="0.226964"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:26.784095" elapsed="0.317210"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Completed</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:54:27.104337" elapsed="0.237953"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:27.342290" elapsed="0.170588"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:27.512878" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:27.512878" elapsed="2.253172"/>
+</kw>
+<doc>FEATURE 3: Tests that completed todo items can be viewed.</doc>
+<tag>todo_app</tag>
+<tag>view</tag>
+<status status="PASS" start="2025-04-02T08:54:22.713242" elapsed="7.052808"/>
+</test>
+<test id="s1-t8" name="View Active Todo Items" line="72">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:29.777656" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:32.069705" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:32.069705" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:32.069705" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:29.771368" elapsed="2.755684"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:32.530038" elapsed="0.360244"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:33.038474" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:32.892863" elapsed="0.145611"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.039550" elapsed="0.211233"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:32.529528" elapsed="0.721255"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.250783" elapsed="0.261383"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:33.586775" level="INFO">${items} = 2</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.512166" elapsed="0.074609"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.586775" elapsed="0.172019"/>
+</kw>
+<arg>Run robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.250783" elapsed="0.509550"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Completed</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.761058" elapsed="0.196882"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:33.957940" elapsed="0.301226"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Run robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:34.260244" elapsed="0.279328"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Active</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:54:34.541585" elapsed="0.209673"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:34.753069" elapsed="0.148872"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Run robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:34.903472" elapsed="0.159015"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:35.063644" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:35.063644" elapsed="2.219496"/>
+</kw>
+<doc>FEATURE 3: Tests that active todo items can be viewed.</doc>
+<tag>todo_app</tag>
+<tag>view</tag>
+<status status="PASS" start="2025-04-02T08:54:29.769348" elapsed="7.513792"/>
+</test>
+<test id="s1-t9" name="View All Todo Items" line="84">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:37.291390" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:39.751539" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:39.759085" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:39.759085" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:37.287153" elapsed="2.918501"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:40.207754" elapsed="0.444407"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:40.730700" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:40.652161" elapsed="0.078539"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:40.732826" elapsed="0.148372"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:40.205654" elapsed="0.675544"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:40.881198" elapsed="0.238162"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:41.194694" level="INFO">${items} = 2</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.119670" elapsed="0.075024"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.194694" elapsed="0.140090"/>
+</kw>
+<arg>Run robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:40.881198" elapsed="0.453586"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.337157" elapsed="0.204836"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:41.631888" level="INFO">${items} = 3</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.543423" elapsed="0.088465"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.631888" elapsed="0.166678"/>
+</kw>
+<arg>Analyse test run results</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.335792" elapsed="0.462774"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Completed</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.798566" elapsed="0.139235"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>All</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:54:41.939811" elapsed="0.190754"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:42.130565" elapsed="0.155813"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Run robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:42.286378" elapsed="0.097374"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Analyse test run results</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:42.384543" elapsed="0.088832"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>3 items left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:54:42.474975" elapsed="0.120282"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:54:42.595257" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:54:42.595257" elapsed="2.218687"/>
+</kw>
+<doc>FEATURE 3: Tests that all todo items can be viewed.</doc>
+<tag>todo_app</tag>
+<tag>view</tag>
+<status status="PASS" start="2025-04-02T08:54:37.283140" elapsed="7.532114"/>
+</test>
+<test id="s1-t10" name="Clear Completed Todo Items" line="97">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:54:44.821892" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:54:47.296240" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:54:47.298250" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:54:47.298250" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:54:44.817832" elapsed="3.012348"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:47.832193" elapsed="0.534326"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:48.444538" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:48.367704" elapsed="0.076834"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:48.444538" elapsed="0.201506"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:47.832193" elapsed="0.817140"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:54:48.650360" elapsed="0.333256"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:54:49.036975" level="INFO">${items} = 2</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:54:48.984245" elapsed="0.052730"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:54:49.039153" elapsed="36.832675"/>
+</kw>
+<arg>Run robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:54:48.649333" elapsed="37.228113"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>2 items left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:25.877446" elapsed="0.309923"/>
+</kw>
+<kw name="Mark Todo Item On Row" owner="keywords">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-02T08:55:26.188615" level="INFO">${row} = 1</msg>
+<var>${row}</var>
+<arg>${row}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-02T08:55:26.188615" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:55:26.283877" level="INFO">${items} = 2</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:55:26.188615" elapsed="0.095262"/>
+</kw>
+<if>
+<branch type="IF" condition="${row} &gt; ${items}">
+<kw name="Fail" owner="BuiltIn">
+<arg>Please give correct row number!</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-04-02T08:55:26.288948" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-04-02T08:55:26.283877" elapsed="0.005071"/>
+</branch>
+<status status="PASS" start="2025-04-02T08:55:26.283877" elapsed="0.005071"/>
+</if>
+<kw name="Click Element" owner="QWeb">
+<arg>//li[${row}]/div/input</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:55:26.288948" elapsed="0.334291"/>
+</kw>
+<arg>1</arg>
+<doc>Marks todo item on a given row. If the item was already marked, unmarks it.</doc>
+<status status="PASS" start="2025-04-02T08:55:26.188615" elapsed="0.436634"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Clear completed</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:55:26.629298" elapsed="0.339885"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>1 item left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:26.969183" elapsed="0.223979"/>
+</kw>
+<kw name="Click Text" owner="QWeb">
+<arg>Completed</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Click text on web page.</doc>
+<status status="PASS" start="2025-04-02T08:55:27.201459" elapsed="0.260787"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:27.466222" elapsed="0.381367"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:55:27.847589" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:55:27.847589" elapsed="2.328322"/>
+</kw>
+<doc>FEATURE 4: Tests that completed todo items can be cleared.</doc>
+<tag>clear</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:54:44.815254" elapsed="45.360657"/>
+</test>
+<test id="s1-t11" name="Edit Todo Item" line="109">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:55:30.185709" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:55:32.896842" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:55:32.896842" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:55:32.898027" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:55:30.178996" elapsed="3.326247"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:55:33.507507" elapsed="0.526947"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:55:34.130401" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:55:34.034454" elapsed="0.095947"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:55:34.130401" elapsed="4.283091"/>
+</kw>
+<arg>Test manually</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:55:33.505752" elapsed="4.907740"/>
+</kw>
+<kw name="Click Element" owner="QWeb">
+<arg>${TODO_ELEMENT_LABEL}</arg>
+<arg>doubleclick=True</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:55:38.413492" elapsed="0.503141"/>
+</kw>
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_ELEMENT}</arg>
+<arg>Run robot tests</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:55:38.916633" elapsed="0.329694"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Test manually</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:39.248346" elapsed="0.222530"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>Run robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:39.470876" elapsed="0.140801"/>
+</kw>
+<kw name="Verify Text" owner="QWeb">
+<arg>1 item left</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify page contains given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:39.615528" elapsed="0.177588"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:55:39.795155" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:55:39.795155" elapsed="2.320114"/>
+</kw>
+<doc>FEATURE 5: Tests that a todo item can be edited by double-clicking it.</doc>
+<tag>edit</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:55:30.178996" elapsed="11.937285"/>
+</test>
+<test id="s1-t12" name="Destroy Todo Item" line="119">
+<kw name="Open Browser" owner="QWeb" type="SETUP">
+<msg time="2025-04-02T08:55:42.124494" level="INFO">QWeb version number: 3.5.0</msg>
+<msg time="2025-04-02T08:55:44.823409" level="INFO">Browser: chrome</msg>
+<msg time="2025-04-02T08:55:44.823409" level="INFO">Browser version: 134.0.6998.178</msg>
+<msg time="2025-04-02T08:55:44.823409" level="INFO">Chromedriver version: 134.0.6998.88 (7e3d5c978c6d3a6eda25692cfac7f893a2b20dd0-refs/branch-heads/6998@{#1898})</msg>
+<arg>${LINK_TO_SUT}</arg>
+<arg>${BROWSER}</arg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Open new browser to given url.</doc>
+<status status="PASS" start="2025-04-02T08:55:42.119301" elapsed="3.153641"/>
+</kw>
+<kw name="Add And Verify Todo Item" owner="keywords">
+<kw name="Type Text" owner="QWeb">
+<arg>${TODO_INPUT}</arg>
+<arg>${item}</arg>
+<tag>Input</tag>
+<tag>Interaction</tag>
+<doc>Type given text to a text field.</doc>
+<status status="PASS" start="2025-04-02T08:55:45.275281" elapsed="0.477236"/>
+</kw>
+<kw name="Get Element Count" owner="QWeb">
+<msg time="2025-04-02T08:55:45.827926" level="INFO">${items} = 1</msg>
+<var>${items}</var>
+<arg>//li/div/label</arg>
+<tag>Getters</tag>
+<doc>Get count of appearances for certain web element.</doc>
+<status status="PASS" start="2025-04-02T08:55:45.754215" elapsed="0.073711"/>
+</kw>
+<kw name="Verify Element Text" owner="QWeb">
+<arg>//li[${items}]/div/label</arg>
+<arg>${item}</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that element contains specified text.</doc>
+<status status="PASS" start="2025-04-02T08:55:45.831257" elapsed="0.193909"/>
+</kw>
+<arg>Create robot tests</arg>
+<doc>Adds a given todo item and verifies that it is found last one on the list.</doc>
+<status status="PASS" start="2025-04-02T08:55:45.272942" elapsed="0.752224"/>
+</kw>
+<kw name="Hover Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Interaction</tag>
+<tag>Text</tag>
+<doc>Hover over text.</doc>
+<status status="PASS" start="2025-04-02T08:55:46.026519" elapsed="0.378290"/>
+</kw>
+<kw name="Click Element" owner="QWeb">
+<arg>${CROSS_ICON}</arg>
+<tag>Interaction</tag>
+<doc>Click element specified by xpath.</doc>
+<status status="PASS" start="2025-04-02T08:55:46.404809" elapsed="0.221130"/>
+</kw>
+<kw name="Verify No Text" owner="QWeb">
+<arg>Create robot tests</arg>
+<tag>Text</tag>
+<tag>Verification</tag>
+<doc>Verify that page does not contain given text.</doc>
+<status status="PASS" start="2025-04-02T08:55:46.625939" elapsed="0.349074"/>
+</kw>
+<kw name="Close Browser" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:55:46.977079" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close current browser.</doc>
+<status status="PASS" start="2025-04-02T08:55:46.977079" elapsed="2.226238"/>
+</kw>
+<doc>FEATURE 6: Tests that a todo item can be destroyed.</doc>
+<tag>destroy</tag>
+<tag>todo_app</tag>
+<status status="PASS" start="2025-04-02T08:55:42.116281" elapsed="7.089048"/>
+</test>
+<kw name="Close All Browsers" owner="QWeb" type="TEARDOWN">
+<msg time="2025-04-02T08:55:49.209342" level="INFO">${BROWSER_REUSE} = False</msg>
+<tag>Browser</tag>
+<tag>Interaction</tag>
+<doc>Close all opened browsers.</doc>
+<status status="PASS" start="2025-04-02T08:55:49.208012" elapsed="0.001330"/>
+</kw>
+<doc>Example tests for Todo App.</doc>
+<status status="PASS" start="2025-04-02T08:53:36.481342" elapsed="132.728000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">add</stat>
+<stat pass="1" fail="0" skip="0">add_many</stat>
+<stat pass="1" fail="0" skip="0">clear</stat>
+<stat pass="1" fail="0" skip="0">destroy</stat>
+<stat pass="1" fail="0" skip="0">edit</stat>
+<stat pass="1" fail="0" skip="0">mark</stat>
+<stat pass="1" fail="0" skip="0">mark_all</stat>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+<stat pass="12" fail="0" skip="0">todo_app</stat>
+<stat pass="1" fail="0" skip="0">unmark</stat>
+<stat pass="3" fail="0" skip="0">view</stat>
+</tag>
+<suite>
+<stat name="Test Todo App" id="s1" pass="12" fail="0" skip="0">Test Todo App</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

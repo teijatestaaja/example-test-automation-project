@@ -1,5 +1,5 @@
-log.html
-report.html
-*.xml
+output.xml
+*.html
+*.db
 screenshots
 __pycache__
