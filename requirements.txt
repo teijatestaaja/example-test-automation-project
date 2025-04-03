@@ -1,7 +1,6 @@
 robotframework>=7
 robotframework-robocop>=6.0.0
 chromedriver-py==134.*
-geckodriver==0.36.* 
 QWeb>=3.5.0
 robotframework-libtoc==1.4.2
 robotframework-dashboard>=0.6.2

@@ -39,6 +39,15 @@ test_runs   - timestamped output.xml files that can be added to the db stored lo
 - [Bash scripting](https://www.datacamp.com/tutorial/how-to-write-bash-script-tutorial) - for creating executable helper scripts
 - [Robot Framework Dashboard](https://github.com/timdegroot1996/robotframework-dashboard) - for test reporting
 
+# Installing tools
+
+To install Robot Framework and any other dependencies listed in the requirements.txt file,
+run the following command in root folder:
+
+```
+pip install -r requirements.txt
+```
+
 # System Under Test
 
 The test app is a simple [TodoMVC application](https://todomvc.com/examples/react/dist/), written in React by TodoMVC Team. It contains the following features:
@@ -79,8 +88,8 @@ Run Robocop linter using either config file or a set of own rules, on root folde
 
 ```
 robocop check
-robocop check --config resources\robocop.toml
-robocop check --custom-rules .\resources\my_rules.py
+robocop check --config resources/robocop.toml
+robocop check --custom-rules ./resources/my_rules.py
 ```
 
 # How to create documentation
