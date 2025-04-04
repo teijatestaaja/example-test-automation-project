@@ -27,6 +27,8 @@ test_runs   - timestamped output.xml files that can be added to the db stored lo
 # Tools
 
 - [Python](https://www.python.org/) - for anything :)
+- [Visual Studio Code](https://code.visualstudio.com/) - for editing robot files
+- [Robot Code extension](https://robotcode.io/) - for Robot Framework syntax validation and for running and debugging Robot Framework test cases in VS Code.
 - [Robot Framework](https://robotframework.org/) - for test automation and running tests
 - [QWeb library](https://github.com/qentinelqi/qweb) - for efficient and reliable web testing and automation
 - [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/) - for running tests in browser (Chrome)
@@ -40,6 +42,8 @@ test_runs   - timestamped output.xml files that can be added to the db stored lo
 - [Robot Framework Dashboard](https://github.com/timdegroot1996/robotframework-dashboard) - for test reporting
 
 # Installing tools
+
+First download and install Visual Studio Code and its plugins. See [setup instructions](https://code.visualstudio.com/docs/setup/setup-overview).
 
 To install Robot Framework and any other dependencies listed in the requirements.txt file,
 run the following command in root folder:
